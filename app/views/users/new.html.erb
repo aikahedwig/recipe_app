@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up - Recipe Suggestion App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <style>
+    body {
+      background-color: #32CD32; /* Lime Green */
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      width: 300px;
+      padding: 20px;
+      background-color: white;
+      color: black;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .container h2 {
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      background-color: #32CD32;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .form-group button:hover {
+      background-color: #28a745; /* Darker green */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Sign Up</h2>
+    <%= form_with(model: @user, url: users_path, local: true) do |form| %>
+      <div class="form-group">
+        <%= form.label :name %>
+        <%= form.text_field :name, required: true %>
+      </div>
+      <div class="form-group">
+        <%= form.label :email %>
+        <%= form.email_field :email, required: true %>
+      </div>
+      <div class="form-group">
+        <%= form.label :password %>
+        <%= form.password_field :password, required: true %>
+      </div>
+      <div class="form-group">
+        <%= form.submit 'Sign Up' %>
+      </div>
+    <% end %>
+  </div>
+</body>
+</html>

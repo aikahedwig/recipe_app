@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Suggestion App</title>
+  <style>
+    body {
+      background-color: #228B22; /* フォレストグリーン */
+      color: white; /* 白 */
+      font-family: Arial, sans-serif; /* フォント */
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #008000; /* グリーン */
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .signin-container {
+      background-color: #32CD32; /* ライムグリーン */
+      border: 2px solid #228B22; /* フォレストグリーン */
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .signin-container h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .signin-container label {
+      display: block;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .signin-container input[type="email"],
+    .signin-container input[type="password"],
+    .signin-container input[type="submit"] {
+      width: calc(100% - 20px); /* コンテナーの余白を差し引く */
+      margin: 0 auto 10px; /* 下のマージンを追加 */
+      padding: 10px;
+      box-sizing: border-box;
+      display: block; /* 行末に各要素を表示 */
+    }
+
+    .signin-container input[type="submit"] {
+      background-color: #228B22;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #008000;
+      padding: 10px 0;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Recipe Suggestion App</h1>
+  </header>
+  <main>
+    <div class="signin-container">
+      <h2>Sign In</h2>
+      <form action="/login" method="post">
+        <!-- <%= hidden_field_tag :authenticity_token, form_authenticity_token %> -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Sign In">
+      </form>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2024 Recipe Suggestion App</p>
+  </footer>
+</body>
+</html>
