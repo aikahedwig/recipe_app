@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+    before_action :require_admin, only: [:new, :create, :destroy]
     before_action :set_recipe, only: %i[show edit update destroy]
 
     def index
@@ -46,4 +47,10 @@ class RecipesController < ApplicationController
     def recipe_params
       params.require(:recipe).permit(:name, :ingredients, :instructions, :nutritional_info)
     end
+    def require_admin
+      unless current_user&.admin?
+        redirect_to root_path, alert: 'アドミン権限がありません'
+      end
+    end
+    
 end
