@@ -1,24 +1,27 @@
 # README
+開発言語
+Ruby 3.0.1
+Rails 6.1.7
+PostgreSQL 12.8
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+実行手順
+$ git clone https://github.com/your-repo/recipe-share-app.git
+$ cd recipe_suggestion_app
+$ bundle install
+$ rails db:create && rails db:migrate
+$ rails s
 
-Things you may want to cover:
+カタログ設計書
+https://docs.google.com/spreadsheets/d/1hFDkyIjAa1UM2Af9zOLLM8nUkn-DzGHPWjwfnmBjIQ0/edit#gid=782464957
 
-* Ruby version
+テーブル定義書
+https://docs.google.com/spreadsheets/d/1hFDkyIjAa1UM2Af9zOLLM8nUkn-DzGHPWjwfnmBjIQ0/edit#gid=2020033787
 
-* System dependencies
+ワイヤーフレーム
+https://app.diagrams.net/#G1Pa2d2EGkouhQQ5yjBr5Ea3ayPI7BmeIs#%7B%22pageId%22%3A%22piDafpqhtRUU5qUU-vj8%22%7D
 
-* Configuration
+ER図
+![alt text](image.png)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+画面遷移図
+![alt text](image-1.png)
