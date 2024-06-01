@@ -6,7 +6,7 @@ PostgreSQL 12.8
 
 実行手順
 $ git clone https://github.com/aikahedwig/recipe_app.git
-$ cd recipe_suggestion_app
+$ cd recipe_app
 $ bundle install
 $ rails db:create && rails db:migrate
 $ rails s
