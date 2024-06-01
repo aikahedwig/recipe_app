@@ -5,7 +5,7 @@ Rails 6.1.7
 PostgreSQL 12.8
 
 実行手順
-$ git clone https://github.com/your-repo/recipe-share-app.git
+$ git clone https://github.com/aikahedwig/recipe_app.git
 $ cd recipe_suggestion_app
 $ bundle install
 $ rails db:create && rails db:migrate
