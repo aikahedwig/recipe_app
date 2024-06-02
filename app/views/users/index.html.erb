@@ -1,0 +1,21 @@
+<h1>User List</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.role %></td>
+        <td>
+          <%= link_to 'View', user_path(user) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

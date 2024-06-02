@@ -37,6 +37,17 @@ class RecipesController < ApplicationController
       @recipe.destroy
       redirect_to recipes_url, notice: 'Recipe was successfully destroyed.'
     end
+
+    def destroy
+      @recipe = Recipe.find(params[:id])
+      if current_user.admin?
+        @recipe.destroy
+        flash[:notice] = "Recipe deleted successfully."
+      else
+        flash[:alert] = "You are not authorized to perform this action."
+      end
+      redirect_to user_path(current_user)
+    end
   
     private
   
